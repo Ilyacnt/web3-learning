@@ -10,6 +10,12 @@ module.exports = {
     module: {
         rules: [
             {
+                test: /ethers\.min\.js$/,
+                resolve: {
+                    fullySpecified: false,
+                },
+            },
+            {
                 test: /\.jsx?$/,
                 exclude: /node_modules/,
                 use: {
@@ -32,6 +38,14 @@ module.exports = {
     ],
     resolve: {
         extensions: ['.ts', '.js', '.tsx', '.jsx'],
+        fallback: {
+            os: require.resolve('os-browserify/browser'),
+            stream: require.resolve('stream-browserify'),
+            assert: require.resolve('assert/'),
+            url: require.resolve('url/'),
+            path: require.resolve('path-browserify'),
+            crypto: require.resolve('crypto-browserify'),
+        },
     },
     devServer: {
         // contentBase: path.join(__dirname, 'dist'),
