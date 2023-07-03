@@ -5,7 +5,7 @@ import { permitHanler, approveHandler, signHandler, transferHandler } from '../w
 const Layout = () => {
     return (
         <Space direction="vertical">
-            <Button type="primary" onClick={() => permitHanler()}>
+            <Button type="primary" onClick={() => permitHandler()}>
                 Permit
             </Button>
             <Button type="primary" onClick={() => approveHandler()}>
